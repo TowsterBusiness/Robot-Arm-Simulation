@@ -1,5 +1,6 @@
 package me.towster.utils;
 
+import me.towster.GeometricSolutionSimulation;
 import me.towster.SimulationScene;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
@@ -95,7 +96,7 @@ public class Window {
         // Set the clear color
         glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 
-        window.setScene(new SimulationScene());
+        window.setScene(new GeometricSolutionSimulation());
     }
 
     private void loop() {
