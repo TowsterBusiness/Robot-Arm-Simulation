@@ -1,6 +1,8 @@
 package me.towster.utils;
 
 import me.towster.GeometricSolutionSimulation;
+import me.towster.PIDGSSimulation;
+import me.towster.PIDSimulation;
 import me.towster.SimulationScene;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
@@ -96,7 +98,7 @@ public class Window {
         // Set the clear color
         glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
 
-        window.setScene(new GeometricSolutionSimulation());
+        window.setScene(new PIDGSSimulation());
     }
 
     private void loop() {
@@ -112,11 +114,13 @@ public class Window {
             glfwPollEvents();
             glClear(GL_COLOR_BUFFER_BIT); // clear the framebuffer
 
-            if (dt >= 0 && currentScene != null) {
+            if (dt > 0 && currentScene != null) {
                 currentScene.update(dt);
+                // swap the color buffers
+                glfwSwapBuffers(glfwWindow);
             }
 
-            glfwSwapBuffers(glfwWindow); // swap the color buffers
+            glFlush();
 
             endTime = Time.getTime();
             dt = endTime - beginTime;

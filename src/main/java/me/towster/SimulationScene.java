@@ -14,8 +14,7 @@ public class SimulationScene extends Scene {
 
     Rectangle arm1;
     Rectangle arm2;
-    float armBuffer = 0.1f;
-    float armLength = 0.7f;
+    float armBuffer = 0.05f;
 
     float lastArm1Angle = 90;
     public SimulationScene() {
@@ -30,8 +29,8 @@ public class SimulationScene extends Scene {
         float finX =  (MouseListener.get().getX() / 500 - 1);
         float finY = -(MouseListener.get().getY() / 450 - 1);
 
-        float armLength1 = 0.7f;
-        float armLength2 = 0.7f;
+        float armLength1 = 0.3f;
+        float armLength2 = 0.1f;
         float y1, y2, difference;
 
         // Checks a lot of the angles from -3.14 to 3.14
@@ -69,11 +68,6 @@ public class SimulationScene extends Scene {
             }
         }
 
-//        for (float b : answers) {
-//            System.out.print(Math.toDegrees(b) + " ");
-//        }
-//        System.out.println();
-
         float arm1Angle = (float) Math.toDegrees(answers[0]) % 360;
         float arm2Angle = (float) Math.toDegrees(answers[2]) % 360;
 
@@ -86,11 +80,11 @@ public class SimulationScene extends Scene {
         }
 
 
-        arm1 = new Rectangle(0, 0, armBuffer, armBuffer, armBuffer, armLength + armBuffer, 1, 0, 0, arm1Angle);
+        arm1 = new Rectangle(0, 0, armBuffer, armBuffer, armBuffer, armLength1 + armBuffer, 1, 0, 0, arm1Angle);
         arm2 = new Rectangle(
-                (float) Math.cos(Math.toRadians(arm1Angle)) * armLength,
-                (float) Math.sin(Math.toRadians(arm1Angle)) * armLength,
-                armBuffer, armBuffer, armBuffer, armLength + armBuffer, 0, 0, 1, arm2Angle
+                (float) Math.cos(Math.toRadians(arm1Angle)) * armLength2,
+                (float) Math.sin(Math.toRadians(arm1Angle)) * armLength2,
+                armBuffer, armBuffer, armBuffer, armLength2 + armBuffer, 0, 0, 1, arm2Angle
         );
 
         lastArm1Angle = arm1Angle;

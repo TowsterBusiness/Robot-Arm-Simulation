@@ -27,9 +27,9 @@ public class GeometricSolutionSimulation extends Scene {
     Rectangle arm2;
     Rectangle arm3;
     Rectangle arm4;
-    float armBuffer = 0.1f;
-    float armLength1 = 0.7f;
-    float armLength2 = 0.7f;
+    float armBuffer = 0.05f;
+    float armLength1 = 0.4f;
+    float armLength2 = 0.4f;
 
     @Override
     public void update(float dt) {
@@ -74,8 +74,12 @@ public class GeometricSolutionSimulation extends Scene {
                 armBuffer, armBuffer, armBuffer, armLength2 + armBuffer, 0, 1, 1, arm4Angle
         );
 
-        arm1.draw();
-        arm2.draw();
+
+        System.out.println("1: " + arm3Angle);
+        System.out.println("2: " + Math.toDegrees(Math.atan2(by2, bx2)));
+
+//        arm1.draw();
+//        arm2.draw();
         arm3.draw();
         arm4.draw();
     }
