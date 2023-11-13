@@ -1,9 +1,6 @@
 package me.towster.utils;
 
-import me.towster.GeometricSolutionSimulation;
-import me.towster.PIDGSSimulation;
-import me.towster.PIDSimulation;
-import me.towster.SimulationScene;
+import me.towster.*;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -28,8 +25,8 @@ public class Window {
     private static Scene currentScene;
 
     private Window() {
-        this.width = 1000;
-        this.height = 900;
+        this.width = 800;
+        this.height = 600;
         this.title = "Simulation";
     }
 

@@ -31,12 +31,15 @@ public class GeometricSolutionSimulation extends Scene {
     float armLength1 = 0.4f;
     float armLength2 = 0.4f;
 
+    float lastArmAngle1;
+    float lastArmAngle2;
+
     @Override
     public void update(float dt) {
         // TODO: Add code to make sure that the pointer is not too close to the orgin or too far from the outside
 
-        float finX = (MouseListener.get().getX() / 500 - 1);
-        float finY = - (MouseListener.get().getY() / 450 - 1);
+        float finX = (MouseListener.get().getX() / 400 - 1);
+        float finY = - (MouseListener.get().getY() / 300 - 1);
 
         double c = Math.sqrt(Math.pow(finX, 2) + Math.pow(finY, 2));
 
@@ -78,9 +81,11 @@ public class GeometricSolutionSimulation extends Scene {
         System.out.println("1: " + arm3Angle);
         System.out.println("2: " + Math.toDegrees(Math.atan2(by2, bx2)));
 
-//        arm1.draw();
-//        arm2.draw();
+        arm1.draw();
+        arm2.draw();
         arm3.draw();
         arm4.draw();
+
+
     }
 }
